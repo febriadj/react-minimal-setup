@@ -93,8 +93,8 @@ module.exports = {
 }
 ~~~
 
-## Finishing Setup
-Langkah terakhir, tambahkan script start, dev dan build pada package.json
+## Konfigurasi Package
+Pada file package.json, tambahkan script start, dev dan build
 ~~~javascript
 "scripts": {
   "start": "webpack --mode=development",
@@ -102,6 +102,50 @@ Langkah terakhir, tambahkan script start, dev dan build pada package.json
   "build": "webpack --mode=production"
 }
 ~~~
+
+## Menambahkan CSS Dan Sass
+Agar dapat menggunakan CSS atau Sass pada aplikasi React, butuh konfigurasi tambahan yang harus dilakukan
+~~~bash
+npm install -D style-loader css-loader sass-loader node-sass
+~~~
+
+## Update Konfigurasi Webpack
+Tambahkan module rules untuk file CSS dan Sass
+~~~javascript
+const webpack = require('webpack')
+const path = require('path')
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      { // tambahkan bagian ini
+        test: /\.(css|s[ac]ss)$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  devServer: {
+    contentBase: path.resolve(__dirname, './dist'),
+    port: 3000,
+    hot: true
+  }
+}
+~~~
+Untuk penggunaan Sass dapat langsung diimport ke file React, tidak perlu melakukan kompilasi ke file CSS. Untuk melihat lebih jelas, ikuti link dibawah ini
+
+[Import File Sass](https://github.com/febriadj/minimal-react-setup/blob/master/src/App.js)
 
 ## Menjalankan Aplikasi
 ~~~javascript
