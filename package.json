@@ -1,7 +1,7 @@
 {
-  "name": "minimal-react-setup",
+  "name": "react-minimal-setup",
   "version": "1.0.0",
-  "description": "minimal set up proyek react.js menggunakan webpack dan babel",
+  "description": "react.js minimal setup menggunakan webpack dan babel",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack --mode=development",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/febriadj/minimal-react-setup.git"
+    "url": "git+https://github.com/febriadj/react-minimal-setup.git"
   },
   "keywords": [
     "minimal-react",
@@ -21,9 +21,9 @@
   "author": "febriadji",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/febriadj/minimal-react-setup/issues"
+    "url": "https://github.com/febriadj/react-minimal-setup/issues"
   },
-  "homepage": "https://github.com/febriadj/minimal-react-setup#readme",
+  "homepage": "https://github.com/febriadj/react-minimal-setup#readme",
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
