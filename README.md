@@ -1,5 +1,5 @@
-## Minimal React.js Setup
-Minimal setup proyek React.js menggunakan Webpack dan Babel<br>
+## React.js Minimal Setup
+React.js minimal setup menggunakan Webpack dan Babel<br>
 ~~~bash
 mkdir minimal-react-setup
 cd minimal-react-setup
