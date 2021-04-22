@@ -26,7 +26,7 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -54,8 +54,13 @@ touch .babelrc // membuat file .babelrc
 ~~~
 ~~~javascript
 {
-  presets: ['@babel/preset-env', '@babel/preset-react']
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
+~~~
+
+## Install Webpack Dev Server
+~~~bash
+npm install -D webpack-dev-server
 ~~~
 
 ## Update Konfigurasi Webpack
@@ -79,15 +84,29 @@ module.exports = {
     ]
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
-  devtool: 'inline-source-map' // optional
+  devtool: 'inline-source-map', // optional
+  devServer: {
+    contentBase: path.resolve(__dirname, './dist'),
+    port: 3000, // menjalankan aplikasi pada port 3000
+    hot: true
+  }
 }
 ~~~
 
 ## Finishing Setup
-Langkah terakhir, tambahkan script start dan build pada package.json. Secara default aplikasi akan berjalan pada port 8080
+Langkah terakhir, tambahkan script start, dev dan build pada package.json
 ~~~javascript
 "scripts": {
-  "start": "webpack serve --mode=development --config ./webpack.config.js",
+  "start": "webpack --mode=development",
+  "dev": "webpack serve --mode=development --config ./webpack.config.js",
   "build": "webpack --mode=production"
 }
+~~~
+
+## Menjalankan Aplikasi
+~~~javascript
+npm start // membuat file bundle.js
+npm run dev // menjalankan aplikasi pada port 3000
+
+npm run build // production
 ~~~
