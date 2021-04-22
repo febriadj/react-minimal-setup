@@ -145,7 +145,7 @@ module.exports = {
 ~~~
 Untuk penggunaan Sass dapat langsung diimport ke file React, tidak perlu melakukan kompilasi ke file CSS. Untuk melihat lebih jelas, ikuti link dibawah ini
 
-[Import File Sass](https://github.com/febriadj/minimal-react-setup/blob/master/src/App.js)
+[Import File Sass](https://github.com/febriadj/react-minimal-setup/blob/master/src/App.js)
 
 ## Menjalankan Aplikasi
 ~~~javascript
