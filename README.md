@@ -1,4 +1,9 @@
 ## React.js Minimal Setup
+![reactjs](https://img.shields.io/badge/reactjs-90e0ef?style=for-the-badge&logo=react&logoColor=black)
+![webpack](https://img.shields.io/badge/webpack-006d77?style=for-the-badge&logo=webpack&logoColor=white)
+![babel](https://img.shields.io/badge/babel-ffff3f?style=for-the-badge&logo=babel&logoColor=black)
+<br>
+
 React.js minimal setup menggunakan Webpack dan Babel<br>
 ~~~bash
 mkdir minimal-react-setup
